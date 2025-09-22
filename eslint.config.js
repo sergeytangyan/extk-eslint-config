@@ -2,14 +2,12 @@ import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
 // to make this a .ts file you first need to install 'jiti'...
 
 export default defineConfig(
-    {
-        ignores: ['build/**', 'dist/**'],
-    },
+    globalIgnores(['build/**', 'dist/**', 'tmp/**']),
     eslint.configs.recommended,
     tseslint.configs.recommended,
     tseslint.configs.stylistic,

@@ -7,7 +7,9 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 // to make this a .ts file you first need to install 'jiti'...
 
 export default defineConfig(
-    globalIgnores(['build/**', 'dist/**', 'tmp/**']),
+    globalIgnores([
+        'build/**', 'dist/**', 'tmp/**', '.vscode/**', '.git/**', '.github/**', '.cache/**', 'cache/**', 'logs/**', 'node_modules/**',
+    ]),
     eslint.configs.recommended,
     tseslint.configs.recommended,
     tseslint.configs.stylistic,
